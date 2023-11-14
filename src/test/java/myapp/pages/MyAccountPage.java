@@ -31,7 +31,7 @@ public class MyAccountPage {
     @FindBy(id = "shipping_company")
     public WebElement companyName;
 
-    @FindBy(id = "select2-shipping_country-container")
+    @FindBy(id = "shipping_country")
     public WebElement countryRegion;
 
     @FindBy(id = "shipping_address_1")
@@ -40,7 +40,7 @@ public class MyAccountPage {
     @FindBy(id = "shipping_city")
     public WebElement townCity;
 
-    @FindBy(id = "sselect2-shipping_state-container")
+    @FindBy(id = "shipping_state")
     public WebElement state;
 
     @FindBy(id = "shipping_postcode")
@@ -48,6 +48,12 @@ public class MyAccountPage {
 
     @FindBy(name = "save_address")
     public WebElement saveAddress;
+
+    @FindBy(xpath = "//li[contains(@class,'alert-danger')]")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "//div[@role='alert']")
+    public  WebElement successMessage;
 
 
 

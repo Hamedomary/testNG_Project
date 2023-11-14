@@ -26,6 +26,26 @@ public class HomePage {
     @FindBy(xpath = "//a[.='My Account']")
     public WebElement myAccount;
 
+    @FindBy(id = "register-policy")
+    public WebElement privacyPolicy;
+
+    @FindBy(xpath = "//a[.='Register']")
+    public WebElement registerButton;
+
+    @FindBy(id = "reg_username")
+    public WebElement registerUserName;
+
+    @FindBy(id = "reg_email")
+    public WebElement registerEmail;
+
+    @FindBy(id = "reg_password")
+    public WebElement registerPassword;
+
+    @FindBy(name = "register")
+    public WebElement registerSignUp;
+
+
+
 //    public WebElement openTab(String name){
 //        return Driver.getDriver().findElement(By.xpath("//a[.='" + name + "']"));
 //    }
