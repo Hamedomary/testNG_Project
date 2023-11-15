@@ -33,8 +33,24 @@ public class Allovercommerce_myaccountpage {
     @FindBy(id = "account_email")
     public WebElement email;
 
-    @FindBy(xpath = "//html[@lang='en-US']")
+    @FindBy(id = "user_description_ifr")
     public WebElement biography;
+
+    @FindBy(id = "password_current")
+    public WebElement current_password;
+
+    @FindBy(id = "password_1")
+    public WebElement new_password;
+
+    @FindBy(id = "password_2")
+    public WebElement confirm_password;
+
+    @FindBy(xpath = "//*[@value='Save changes']")
+    public WebElement saveChangesButton;
+
+    @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
+    public WebElement successfullSaved;
+
 
 
 
