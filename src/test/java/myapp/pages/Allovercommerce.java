@@ -78,6 +78,18 @@ public class Allovercommerce {
     public WebElement addNewCategoryButton;
     @FindBy(xpath = "//*[@id='product_cats_checklist']/li[1]")
     public WebElement addedCategory;
+    @FindBy(xpath = "//*[@id='product_brand']/li[1]")
+    public WebElement addedBrand;
+    @FindBy(xpath = "//button[@data-taxonomy='product_brand']")
+    public WebElement addNewBrandButton;
+
+    @FindBy(xpath = "//*[@id='wcfm_products_manage_form_general_expander']/div[2]/div[10]/p")
+    public WebElement addNewBrand;
+    @FindBy(xpath = "//*[@id='wcfm_new_product_brand']")
+    public WebElement brandName;
+    @FindBy(xpath = "//select[@id='wcfm_new_parent_product_brand']")
+    public WebElement parentBrandDropdown;
+
 
 
 

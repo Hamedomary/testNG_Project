@@ -8,6 +8,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
+//Go to homepage
+//        Click 'sign in'
+//        Type Email
+//        Type Password
+//        Click 'sign in'
+//        Click My Account
+//        Click Store Manager
+//        Click Product
+//        Click Add New
+//        Click the Dropdown
+//        Verify Product brands options are exist
 
 public class TC08 {
 
@@ -31,15 +42,6 @@ public class TC08 {
         //System.out.println(allovercommerce.productBrands.getText());
 
 
-    }
-    @Test
-    public void asd(){
-        Allovercommerce allovercommerce = new Allovercommerce();
-        Driver.getDriver().get("https://allovercommerce.com");
-        allovercommerce.login.click();
-        allovercommerce.username.sendKeys(ConfigReader.getProperty("aoc_username"));
-        allovercommerce.loginbutton.click();
-        System.out.println(Driver.getDriver().findElement(By.xpath("//*[@id='signin']/form/input[2]")).getText());
     }
 
 

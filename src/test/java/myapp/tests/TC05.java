@@ -8,6 +8,20 @@ import myapp.utilities.WaitUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+//Go to homepage
+//        Click 'sign in'
+//        Type Email
+//        Type Password
+//        Click 'sign in'
+//        Click My Account
+//        Click Store Manager
+//        Click Product
+//        Click Add New
+//        Leave any of Product Title, Short Description and Description
+//        Add Product Image
+//        Choose Categories
+//        Click Submit Button
+//        Verify that there is an error message  : Description or Product Title or Short Description is required
 
 public class TC05 {
     @Test

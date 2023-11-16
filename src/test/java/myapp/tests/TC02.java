@@ -10,6 +10,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+//Go to homepage
+//        Click 'sign in'
+//        Type Email
+//        Type Password
+//        Click 'sign in'
+//        Click My Account
+//        Click Store Manager
+//        Click Product
+//        Click Add New
+//        Type Product Title, Short Description and Description
+//        Add Product Image
+//        Choose Categories
+//        Click Submit Button
+//        Verify that product was added succesfully
 
 public class TC02 {
     @Test

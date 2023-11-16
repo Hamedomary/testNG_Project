@@ -8,6 +8,20 @@ import myapp.utilities.WaitUtils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+//Go to homepage
+//        Click 'sign in'
+//        Type Email
+//        Type Password
+//        Click 'sign in'
+//        Click My Account
+//        Click Store Manager
+//        Click Product
+//        Click Add New
+//        Type Product Title, Short Description and Description
+//        Add Product Image
+//        Leave Categories not choosen
+//        Click Submit Button
+//        Verify that there is an error message  : Category is required
 
 public class TC04 {
     @Test

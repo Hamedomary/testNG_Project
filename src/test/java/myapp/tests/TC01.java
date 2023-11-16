@@ -10,6 +10,20 @@ import org.testng.annotations.Test;
 
 
 public class TC01 {
+//    Go to homepage
+//    Click 'sign in'
+//    Type Email
+//    Type Password
+//    Click 'sign in'
+//    Click My Account
+//    Click Store Manager
+//    Click Product
+//    Click Add New
+//    Click the Dropdown
+//    Verify Simple Product option is exist
+//    Verify Variable Product option is exist
+//    Verify Grouped Product options is exist
+//    Verify External - Affiliate Product option is exist
 
     @Test
     public void TC01(){

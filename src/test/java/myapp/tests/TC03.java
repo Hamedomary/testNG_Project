@@ -7,6 +7,20 @@ import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
 import org.junit.Assert;
 import org.testng.annotations.Test;
+//Go to homepage
+//        Click 'sign in'
+//        Type Email
+//        Type Password
+//        Click 'sign in'
+//        Click My Account
+//        Click Store Manager
+//        Click Product
+//        Click Add New
+//        Type Product Title, Short Description and Description
+//        Product Image is empty
+//        Choose Categories
+//        Click Submit Button
+//        Verify that there is an error message  : Image is required
 
 public class TC03 {
     @Test
