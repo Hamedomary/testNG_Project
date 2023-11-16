@@ -1,20 +1,16 @@
-package myapp.tests;
+package myapp.tests.US_04;
 
 import com.github.javafaker.Faker;
 import myapp.pages.HomePage;
 import myapp.pages.MyAccountPage;
-import myapp.utilities.ActionsUtils;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
-import org.openqa.selenium.devtools.v85.network.model.DataReceived;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 
-public class TC_01 {
+public class US_04_TC_01 {
 //    Scenario: TC_01 Fill the shipping address form without firstname
 //    Given user sign in to the application
 //    And user goes to my account page
@@ -41,14 +37,12 @@ public class TC_01 {
 //    And user goes to my account page
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerce_url"));
         homePage.signInButton.click();
-        homePage.userName.sendKeys(ConfigReader.getProperty("allovercommerce_username"));
-        homePage.password.sendKeys(ConfigReader.getProperty("allovercommerce_password"));
+        homePage.userName.sendKeys(ConfigReader.getProperty("allovercommerce_username_US_04"));
+        homePage.password.sendKeys(ConfigReader.getProperty("allovercommerce_password_US_04"));
         homePage.signInButtonInPopUp.click();
 
         JSUtils.JSclickWithTimeout(homePage.myAccount);
 
-
-//        homePage.myAccount.click();
 
 //    And user clicks addresses
         myAccountPage.addresses.click();
@@ -67,7 +61,7 @@ public class TC_01 {
 
 
         Select selectCountry = new Select(myAccountPage.countryRegion);
-        selectCountry.selectByVisibleText(ConfigReader.getProperty("shipping_country"));
+        selectCountry.selectByVisibleText(ConfigReader.getProperty("shipping_country_US_04"));
 
 //    And user enter "address"
         myAccountPage.streetAddress.sendKeys(faker.address().streetAddress());

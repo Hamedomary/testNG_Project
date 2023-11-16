@@ -1,5 +1,4 @@
-package myapp.tests;
-
+package myapp.tests.US_04;
 import com.github.javafaker.Faker;
 import myapp.pages.HomePage;
 import myapp.pages.MyAccountPage;
@@ -10,8 +9,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_05 {
-//    Scenario: TC_05 Fill the shipping address form without address
+public class US_04_TC_09 {
+//    Scenario: TC_9 Fill the shipping address form
 //    Given user sign in to the application
 //    And user goes to my account page
 //    And user clicks addresses
@@ -19,13 +18,13 @@ public class TC_05 {
 //    And user enter "fist_name"
 //    And user enter "last_name"
 //    And user enter "company"
-//    And user select "country"
+//    And user select country
+//    And user enter "address"
 //    And user enter "city"
 //    And user enter "state"
 //    And user enter "postcode"
 //    And user click save address button
-//    Then verify error message is displayed
-
+//    Then verify saved successful
     Faker faker=new Faker();
     MyAccountPage myAccountPage=new MyAccountPage();
     HomePage homePage=new HomePage();
@@ -34,23 +33,22 @@ public class TC_05 {
     public void signInTest(){
 //    Given user sign in to the application
 //    And user goes to my account page
-        Driver.getDriver().get(ConfigReader.getProperty("allovercommerce_url"));
-        homePage.signInButton.click();
-        homePage.userName.sendKeys(ConfigReader.getProperty("allovercommerce_username"));
-        homePage.password.sendKeys(ConfigReader.getProperty("allovercommerce_password"));
-        homePage.signInButtonInPopUp.click();
+        Driver.getDriver().get (ConfigReader.getProperty("allovercommerce_url"));
+        homePage.registerButton.click();
+        homePage.registerUserName.sendKeys(faker.name().username());
+        homePage.registerEmail.sendKeys(faker.internet().emailAddress());
+
+        homePage.registerPassword.sendKeys(faker.internet().password());
+        homePage.privacyPolicy.click();
+        homePage.registerSignUp.click();
 
         JSUtils.JSclickWithTimeout(homePage.myAccount);
-
-
-//        homePage.myAccount.click();
 
 //    And user clicks addresses
         myAccountPage.addresses.click();
 
 //    When user click add button under shipping address
         JSUtils.JSclickWithTimeout(myAccountPage.addAddress);
-//        myAccountPage.addAddress.click();
 
 //    And user enter "firstName"
         myAccountPage.firstName.sendKeys(faker.name().firstName());
@@ -63,7 +61,10 @@ public class TC_05 {
 
 //    And user select country
         Select selectCountry=new Select(myAccountPage.countryRegion);
-        selectCountry.selectByVisibleText(ConfigReader.getProperty("shipping_country"));
+        selectCountry.selectByVisibleText(ConfigReader.getProperty("shipping_country_US_04"));
+
+//    And user enter "address"
+        myAccountPage.streetAddress.sendKeys(faker.address().streetAddress());
 
 //    And user enter "city"
         myAccountPage.townCity.sendKeys(faker.address().city());
@@ -84,7 +85,8 @@ public class TC_05 {
 
 
 //    Then verify error message is displayed
-        Assert.assertTrue(myAccountPage.errorMessage.isDisplayed());
+        Assert.assertTrue(myAccountPage.successMessage.isDisplayed());
+
 
         Driver.getDriver().quit();
     }

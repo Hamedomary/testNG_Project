@@ -1,4 +1,4 @@
-package myapp.tests;
+package myapp.tests.US_04;
 
 import com.github.javafaker.Faker;
 import myapp.pages.HomePage;
@@ -10,8 +10,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TC_09 {
-//    Scenario: TC_9 Fill the shipping address form
+public class US_04_TC_04 {
+//    Scenario: TC_04 Fill the shipping address form without country
 //    Given user sign in to the application
 //    And user goes to my account page
 //    And user clicks addresses
@@ -19,14 +19,13 @@ public class TC_09 {
 //    And user enter "fist_name"
 //    And user enter "last_name"
 //    And user enter "company"
-//    And user select country
 //    And user enter "address"
 //    And user enter "city"
 //    And user enter "state"
 //    And user enter "postcode"
 //    And user click save address button
-//    Then verify saved successful
-Faker faker=new Faker();
+//    Then verify error message is displayed
+    Faker faker=new Faker();
     MyAccountPage myAccountPage=new MyAccountPage();
     HomePage homePage=new HomePage();
 
@@ -34,16 +33,16 @@ Faker faker=new Faker();
     public void signInTest(){
 //    Given user sign in to the application
 //    And user goes to my account page
-        Driver.getDriver().get (ConfigReader.getProperty("allovercommerce_url"));
-        homePage.registerButton.click();
-        homePage.registerUserName.sendKeys(faker.name().username());
-        homePage.registerEmail.sendKeys(faker.internet().emailAddress());
-
-        homePage.registerPassword.sendKeys(faker.internet().password());
-        homePage.privacyPolicy.click();
-        homePage.registerSignUp.click();
+        Driver.getDriver().get(ConfigReader.getProperty("allovercommerce_url"));
+        homePage.signInButton.click();
+        homePage.userName.sendKeys(ConfigReader.getProperty("allovercommerce_username_US_04"));
+        homePage.password.sendKeys(ConfigReader.getProperty("allovercommerce_password_US_04"));
+        homePage.signInButtonInPopUp.click();
 
         JSUtils.JSclickWithTimeout(homePage.myAccount);
+
+
+//        homePage.myAccount.click();
 
 //    And user clicks addresses
         myAccountPage.addresses.click();
@@ -61,9 +60,6 @@ Faker faker=new Faker();
 //    And user enter "company"
         myAccountPage.companyName.sendKeys(faker.company().name());
 
-//    And user select country
-        Select selectCountry=new Select(myAccountPage.countryRegion);
-        selectCountry.selectByVisibleText(ConfigReader.getProperty("shipping_country"));
 
 //    And user enter "address"
         myAccountPage.streetAddress.sendKeys(faker.address().streetAddress());
@@ -87,9 +83,10 @@ Faker faker=new Faker();
 
 
 //    Then verify error message is displayed
-        Assert.assertTrue(myAccountPage.successMessage.isDisplayed());
-
+        Assert.assertTrue(myAccountPage.errorMessage.isDisplayed());
 
         Driver.getDriver().quit();
+
     }
+
 }
