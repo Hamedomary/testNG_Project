@@ -5,10 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Allovercommerce_myaccountpage {
+public class AC_myaccountpage {
 
 
-    public Allovercommerce_myaccountpage(){
+    public AC_myaccountpage(){
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
@@ -21,7 +21,7 @@ public class Allovercommerce_myaccountpage {
     @FindBy(xpath = "//a[.='Account details']")
     public WebElement accountDetails;
 
-    @FindBy(id = "account_first_name")
+    @FindBy(xpath = "//input[@name='account_first_name']")
     public WebElement firstName;
 
     @FindBy(id = "account_last_name")
@@ -33,7 +33,7 @@ public class Allovercommerce_myaccountpage {
     @FindBy(id = "account_email")
     public WebElement email;
 
-    @FindBy(id = "user_description_ifr")
+    @FindBy(xpath = "//*[@id='tinymce']")
     public WebElement biography;
 
     @FindBy(id = "password_current")
@@ -50,6 +50,24 @@ public class Allovercommerce_myaccountpage {
 
     @FindBy(xpath = "//*[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
     public WebElement successfullSaved;
+
+    @FindBy (xpath = "//*[@data-id='account_first_name']")
+    public WebElement firstNameRequired;
+
+    @FindBy (xpath = "//li[@data-id='account_last_name']")
+    public WebElement lastNameRequired;
+
+    @FindBy (xpath = "//li[@data-id='account_display_name']")
+    public WebElement displayNameRequired;
+
+    @FindBy (xpath = "//li[@data-id='account_email']")
+    public WebElement emailAddressRequired;
+
+    @FindBy (css = ".alert.alert-simple.alert-icon.alert-close-top.alert-danger")
+    public WebElement incorrectCurrentPass;
+
+    @FindBy (xpath = "//li[@class=' alert alert-simple alert-icon alert-close-top alert-danger']")
+    public WebElement incorrectMatchPass;
 
 
 

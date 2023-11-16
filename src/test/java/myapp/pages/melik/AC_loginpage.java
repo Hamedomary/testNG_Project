@@ -5,21 +5,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Allovercommerce_homepage {
+public class AC_loginpage {
 
 
-    public Allovercommerce_homepage(){
+    public AC_loginpage(){
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//a[.='Sign In']")
-    public WebElement signIn;
-
-    @FindBy(partialLinkText = "My Account")
-    public WebElement MyAccount;
 
 
+    @FindBy(id = "username")
+    public WebElement usurname;
+
+    @FindBy(id = "password")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[@name='login']")
+    public WebElement signInButton;
 
 
 
