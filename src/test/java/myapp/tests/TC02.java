@@ -1,3 +1,6 @@
+
+package myapp.tests;public class TC02 {
+
 package myapp.tests;
 
 import myapp.pages.Allovercommerce;
@@ -69,4 +72,5 @@ public class TC02 {
 
 
     }
+
 }

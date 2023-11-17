@@ -1,3 +1,9 @@
+
+package myapp.tests;
+
+public class TC01 {
+    Test
+
 package myapp.tests.projectss;
 
 import com.sun.jna.StringArray;
@@ -49,4 +55,5 @@ public class TC01 {
         }
 
     }
+
 }
