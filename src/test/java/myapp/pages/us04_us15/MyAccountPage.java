@@ -68,8 +68,8 @@ public class MyAccountPage {
     @FindBy(xpath = "//*[@id='featured_img_display']")
     public WebElement imageToClick;
 
-//    @FindBy(id = "pro_title")
-//    public WebElement productTitle;
+    @FindBy(id = "pro_title")
+    public WebElement productTitle;
 
     @FindBy(xpath = "//button[@class='button insert-media add_media']")
     public WebElement shortDiscAddMedia;
@@ -113,13 +113,13 @@ public class MyAccountPage {
     @FindBy(id = "attributes_is_active_1")
     public WebElement color;
 
-    @FindBy(xpath = "//*[@id=\"attributes\"]/div[2]/span[2]/span[1]/span/ul/li/input")
+    @FindBy(id = "attributes_value_1")
     public WebElement colorSelect;
 
     @FindBy(id = "attributes_is_active_2")
     public WebElement size;
 
-    @FindBy(xpath = "//*[@id=\"attributes\"]/div[3]/span[2]/span[1]/span/ul")
+    @FindBy(id = "attributes_value_2")
     public WebElement sizeSelect;
 
     @FindBy(name = "submit-data")
