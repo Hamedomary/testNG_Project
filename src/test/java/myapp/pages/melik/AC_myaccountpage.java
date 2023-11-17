@@ -33,7 +33,7 @@ public class AC_myaccountpage {
     @FindBy(id = "account_email")
     public WebElement email;
 
-    @FindBy(xpath = "//*[@id='tinymce']")
+    @FindBy(css = "#tinymce")
     public WebElement biography;
 
     @FindBy(id = "password_current")

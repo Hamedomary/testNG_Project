@@ -29,6 +29,13 @@ public class AC_homepage {
     public WebElement nextPageSign;
 
 
+    @FindBy(xpath = "//a[@class='cart-toggle']//i[@class='w-icon-cart']")
+    public WebElement chartIcon;
+
+    @FindBy(partialLinkText = "View cart")
+    public WebElement viewChart;
+
+
 
 
 

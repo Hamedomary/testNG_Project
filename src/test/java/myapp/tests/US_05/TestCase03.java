@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import static myapp.utilities.JSUtils.flashElement;
 
-@Listeners(ListenerUtils.class)
+@Listeners(myapp.utilities.ListenerUtils.class)
 public class TestCase03 {
 
     AC_homepage homepage = new AC_homepage();

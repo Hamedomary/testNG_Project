@@ -95,7 +95,7 @@ public class TestCase01 {
 //        actions.click(myaccountpage.biography).perform();
 //        myaccountpage.biography.sendKeys("lorem");
 
-//        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         WaitUtils.waitFor(2);
         String text=faker.harryPotter().quote();
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//iframe[@id='user_description_ifr']")));
@@ -104,6 +104,13 @@ public class TestCase01 {
         myaccountpage.biography.sendKeys(text);
         WaitUtils.waitFor(2);
         Driver.getDriver().switchTo().defaultContent();
+
+//        Driver.getDriver().switchTo().frame(0);
+//        JSUtils.JSclickWithTimeout(myaccountpage.biography);
+//        myaccountpage.biography.sendKeys("ABcdefg123546");
+//        Driver.getDriver().switchTo().defaultContent();
+
+
 
 
 
@@ -151,6 +158,10 @@ public class TestCase01 {
         ExtentReportUtils.flush();
         LoggerUtils.info("Test completed...");
 
+
+
+
+//
 
 
     }
