@@ -1,6 +1,7 @@
 package myapp.pages;
 
 import myapp.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -61,11 +62,14 @@ public class MyAccountPage {
     @FindBy(xpath = "//a[contains(.,'Products')]")
     public WebElement products;
 
-    @FindBy(xpath = "//span[contains(@class,'text') and text()='Add New']")
+    @FindBy(linkText = "Add New")
     public WebElement addNewButton;
 
-    @FindBy(id = "pro_title")
-    public WebElement productTitle;
+    @FindBy(xpath = "//*[@id='featured_img_display']")
+    public WebElement imageToClick;
+
+//    @FindBy(id = "pro_title")
+//    public WebElement productTitle;
 
     @FindBy(xpath = "//button[@class='button insert-media add_media']")
     public WebElement shortDiscAddMedia;
@@ -73,8 +77,8 @@ public class MyAccountPage {
     @FindBy(xpath = "(//button[@class='button insert-media add_media'])[2]")
     public WebElement discriptionAddMedia;
 
-    @FindBy(name = "product_cats[]")
-    public WebElement categories;
+    @FindBy(id = "wcfm_products_manage_form_inventory_head")
+    public WebElement inventory;
 
     @FindBy(id = "sku")
     public WebElement sku;
@@ -109,33 +113,47 @@ public class MyAccountPage {
     @FindBy(id = "attributes_is_active_1")
     public WebElement color;
 
-    @FindBy(xpath = "//p[contains(.,'Size')]")
+    @FindBy(xpath = "//*[@id=\"attributes\"]/div[2]/span[2]/span[1]/span/ul/li/input")
+    public WebElement colorSelect;
+
+    @FindBy(id = "attributes_is_active_2")
     public WebElement size;
+
+    @FindBy(xpath = "//*[@id=\"attributes\"]/div[3]/span[2]/span[1]/span/ul")
+    public WebElement sizeSelect;
 
     @FindBy(name = "submit-data")
     public WebElement submitButton;
 
-    @FindBy(id = "__wp-uploader-id-1")
-    public WebElement selectFile;
-
-    @FindBy(id = "featured_img_display")
-    public WebElement img;
+//    @FindBy(id = "__wp-uploader-id-1")
+//    public WebElement selectFile;
+//
+//    @FindBy(id = "featured_img_display")
+//    public WebElement img;
 
     @FindBy(xpath = "//*[@type='file']")
     public WebElement fileUpload;
 
-    @FindBy(xpath = "(//div[@class='thumbnail'])[1]")
-    public WebElement flower1;
+//    @FindBy(xpath = "(//div[@class='thumbnail'])[1]")
+//    public WebElement flower1;
 
-    @FindBy(xpath = "(//button[contains(.,'Select')])[8]")
+    @FindBy(xpath = "//button[.='Select']")
     public WebElement select;
 
     @FindBy(xpath = "//button[contains(.,'Insert into post')]")
     public WebElement insertIntoPost;
 
-    @FindBy(xpath = "//div[@class='thumbnail']")
+    @FindBy(xpath = "(//button[contains(.,'Insert into post')])[2]")
+    public WebElement insertIntoPost2;
+
+    @FindBy(xpath = "//*[@id='__attachments-view-189']/li[1]")
     public WebElement selectFlower;
 
+    @FindBy(xpath = "(//ul[@class='attachments ui-sortable ui-sortable-disabled'])[3]/li[1]")
+    public WebElement selectFlower2;
+
+    @FindBy(css = ".wcfm-tabWrap")
+    public WebElement menuList;
 
 
 
@@ -143,15 +161,8 @@ public class MyAccountPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
+    public WebElement categories(String category){
+        return Driver.getDriver().findElement(By.xpath("//span[.='" + category + "']/../input"));
+    }
 
 }

@@ -9,6 +9,8 @@ import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 public class US_15_TC_01 {
@@ -47,30 +49,40 @@ public class US_15_TC_01 {
 
 //    When click Add New button
         myAccountPage.addNewButton.click();
+        WaitUtils.waitFor(3);
+        JSUtils.JSclickWithTimeout(myAccountPage.imageToClick);
 
 //    And add media for short description and for description
+        String userHome= System.getProperty("user.home");
+        myAccountPage.fileUpload.sendKeys(userHome + "/Desktop/flower.jpeg");
+        WaitUtils.waitForClickablility(myAccountPage.select, 10);
+        myAccountPage.select.click();
+
+        WaitUtils.waitFor(3);
         JSUtils.JSclickWithTimeout(myAccountPage.shortDiscAddMedia);
 
-//        myAccountPage.selectFile.click();
-       //Driver.getDriver().switchTo().frame("excerpt_ifr");
-        String userHome= System.getProperty("user.home");
-        Driver.getDriver().findElement(By.className("upload-ui"));
-        myAccountPage.fileUpload.sendKeys(userHome + "/Desktop/flower.jpeg");
-        myAccountPage.insertIntoPost.click();
-        myAccountPage.selectFlower.click();
-//        myAccountPage.flower1.click();
+        WaitUtils.waitFor(3);
+        JSUtils.JSclickWithTimeout(myAccountPage.selectFlower);
+
         WaitUtils.waitFor(3);
         myAccountPage.insertIntoPost.click();
- //       JSUtils.JSclickWithTimeout(myAccountPage.insertIntoPost);
 
+        WaitUtils.waitFor(3);
+        JSUtils.JSclickWithTimeout(myAccountPage.discriptionAddMedia);
 
-//    And select category
-//        myAccountPage.categories.click();
-        JSUtils.JSclickWithTimeout(myAccountPage.categories);
+        WaitUtils.waitFor(3);
+        JSUtils.JSclickWithTimeout(myAccountPage.selectFlower2);
+        myAccountPage.insertIntoPost2.click();
+
+//       And select category
+        JSUtils.JSclickWithTimeout(myAccountPage.categories("Flowers"));
 
 //    Then "Verify Inventory, Shipping, Attributes, Linked, Seo,Advanced menus are visible"
+        Assert.assertTrue(myAccountPage.menuList.isDisplayed());
+    }
 
-
-
+    @AfterTest
+    public void close(){
+        Driver.closeDriver();
     }
 }
