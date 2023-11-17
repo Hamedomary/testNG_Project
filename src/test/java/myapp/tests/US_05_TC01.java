@@ -17,7 +17,8 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import static myapp.utilities.JSUtils.*;
-import static org.junit.Assert.assertTrue;
+
+import static org.testng.AssertJUnit.assertTrue;
 
 
 @Listeners(myapp.utilities.ListenerUtils.class)
