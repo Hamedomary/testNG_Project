@@ -8,7 +8,6 @@ import org.openqa.selenium.support.PageFactory;
 public class Allovercommerce {
     public Allovercommerce(){
         PageFactory.initElements(Driver.getDriver(),this);}
-    public String newCategory;
     @FindBy(xpath = "//a[@class='login inline-type']")
     public WebElement login;
     @FindBy(xpath = "//input[@name='username']")

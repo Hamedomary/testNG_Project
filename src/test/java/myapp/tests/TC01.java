@@ -27,6 +27,7 @@ public class TC01 {
 
     @Test
     public void TC01(){
+
         Allovercommerce allovercommerce = new Allovercommerce();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerce"));
         allovercommerce.login.click();
