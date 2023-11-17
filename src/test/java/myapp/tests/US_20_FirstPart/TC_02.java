@@ -1,10 +1,7 @@
 package myapp.tests.US_20_FirstPart;
 
-import myapp.pages.AlloverLoginPage;
-import myapp.pages.US20Page;
+import myapp.pages.us11_us20.US20Page;
 import myapp.utilities.Driver;
-import myapp.utilities.JSUtils;
-import myapp.utilities.WaitUtils;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;

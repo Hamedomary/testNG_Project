@@ -1,17 +1,12 @@
 package myapp.tests.US_11;
 
-import myapp.pages.AlloverLoginPage;
+import myapp.pages.us11_us20.AlloverLoginPage;
 
 import myapp.utilities.Driver;
 import myapp.utilities.WaitUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
 
-import static myapp.utilities.Driver.driver;
 import static myapp.utilities.JSUtils.flashElement;
 import static org.testng.AssertJUnit.assertTrue;
 

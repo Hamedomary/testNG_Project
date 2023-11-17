@@ -1,11 +1,10 @@
 package myapp.tests.US_11;
 
-import myapp.pages.AlloverLoginPage;
+import myapp.pages.us11_us20.AlloverLoginPage;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static myapp.utilities.JSUtils.flashElement;

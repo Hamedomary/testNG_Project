@@ -1,4 +1,4 @@
-package myapp.pages;
+package myapp.pages.us11_us20;
 
 import io.github.bonigarcia.wdm.online.GoodVersions;
 import myapp.utilities.Driver;

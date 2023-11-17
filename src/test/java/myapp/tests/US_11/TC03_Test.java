@@ -1,20 +1,17 @@
 package myapp.tests.US_11;
 import org.junit.Assert;
 
-import myapp.pages.AlloverLoginPage;
+import myapp.pages.us11_us20.AlloverLoginPage;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-import static myapp.utilities.JSUtils.JSclickWithTimeout;
 import static myapp.utilities.JSUtils.flashElement;
 
 public class TC03_Test {

@@ -1,7 +1,7 @@
 package myapp.tests.US_04;
 import com.github.javafaker.Faker;
-import myapp.pages.us04_us18.HomePage;
-import myapp.pages.us04_us18.MyAccountPage;
+import myapp.pages.us04_us15.HomePage;
+import myapp.pages.us04_us15.MyAccountPage;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
