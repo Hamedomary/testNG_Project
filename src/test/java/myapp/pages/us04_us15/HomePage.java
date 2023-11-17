@@ -1,7 +1,6 @@
-package myapp.pages;
+package myapp.pages.us04_us15;
 
 import myapp.utilities.Driver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;

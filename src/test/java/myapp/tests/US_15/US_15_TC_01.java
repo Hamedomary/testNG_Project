@@ -1,14 +1,12 @@
 package myapp.tests.US_15;
 
 import com.github.javafaker.Faker;
-import myapp.pages.HomePage;
-import myapp.pages.MyAccountPage;
+import myapp.pages.us04_us15.HomePage;
+import myapp.pages.us04_us15.MyAccountPage;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
