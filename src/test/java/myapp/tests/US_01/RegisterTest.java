@@ -1,7 +1,7 @@
-package myapp.tests.userStory01;
+package myapp.tests.US_01;
 
 import com.github.javafaker.Faker;
-import myapp.pages.userStory01.LoginPage;
+import myapp.pages.US_01.LoginPage;
 import myapp.utilities.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;

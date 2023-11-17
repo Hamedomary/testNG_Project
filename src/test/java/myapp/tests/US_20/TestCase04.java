@@ -1,7 +1,7 @@
 package myapp.tests.US_20;
 
-import myapp.pages.HomePage;
-import myapp.pages.MyAccountPage;
+import myapp.pages.US_10.HomePage;
+import myapp.pages.US_10.MyAccountPage;
 import myapp.utilities.Driver;
 import myapp.utilities.WaitUtils;
 import org.openqa.selenium.Keys;

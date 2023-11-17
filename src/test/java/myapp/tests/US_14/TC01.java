@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:src/test/java/myapp/tests/TC01.java
 
 package myapp.tests;
 
@@ -5,13 +6,13 @@ public class TC01 {
     Test
 
 package myapp.tests.projectss;
+=======
+package myapp.tests.US_14;
+>>>>>>> Stashed changes:src/test/java/myapp/tests/US_14/TC01.java
 
-import com.sun.jna.StringArray;
-import myapp.pages.Allovercommerce;
+import myapp.pages.US_14.Allovercommerce;
 import myapp.utilities.*;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 
@@ -50,7 +51,7 @@ public class TC01 {
         allovercommerce.addnew.click();
         String[] products = {"Simple Product", "Variable Product", "Grouped Product", "External/Affiliate Product"};
         for (int i = 0; i <4 ; i++) {
-            Assert.assertTrue(allovercommerce.productDropdown.getText().contains(products[i]));
+           Assert.assertTrue(allovercommerce.productDropdown.getText().contains(products[i]));
             System.out.println(products[i]);
         }
 

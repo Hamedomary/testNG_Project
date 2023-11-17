@@ -1,4 +1,4 @@
-package myapp.tests.us_08;
+package myapp.pages.US_08;
 
 import myapp.utilities.Driver;
 import org.openqa.selenium.WebElement;

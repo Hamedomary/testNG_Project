@@ -1,11 +1,19 @@
-package myapp.tests;
+<<<<<<< Updated upstream:src/test/java/myapp/tests/TC02.java
 
-import myapp.pages.Allovercommerce;
+package myapp.tests;public class TC02 {
+
+package myapp.tests;
+=======
+package myapp.tests.US_14;
+>>>>>>> Stashed changes:src/test/java/myapp/tests/US_14/TC02.java
+
+import myapp.pages.US_14.Allovercommerce;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
-import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 //Go to homepage
 //        Click 'sign in'
@@ -17,14 +25,14 @@ import org.testng.annotations.Test;
 //        Click Product
 //        Click Add New
 //        Type Product Title, Short Description and Description
-//        Product Image is empty
+//        Add Product Image
 //        Choose Categories
 //        Click Submit Button
-//        Verify that there is an error message  : Image is required
+//        Verify that product was added succesfully
 
-public class TC03 {
+public class TC02 {
     @Test
-    public void TC03(){
+    public void TC02(){
         Allovercommerce allovercommerce = new Allovercommerce();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerce"));
         allovercommerce.login.click();
@@ -46,12 +54,25 @@ public class TC03 {
         Driver.getDriver().switchTo().frame(allovercommerce.descriptionIframe);
         allovercommerce.description.sendKeys("asjkd3kjashdka");
         Driver.getDriver().switchTo().defaultContent();
-        JSUtils.JSclickWithTimeout(allovercommerce.brandsList);
+       JSUtils.JSclickWithTimeout(allovercommerce.brandsList);
         JSUtils.JSclickWithTimeout(allovercommerce.categoriesList);
+        JSUtils.JSclickWithTimeout(allovercommerce.imageToClick);
+        allovercommerce.fileUpload.sendKeys("C:\\Users\\musta\\OneDrive\\Desktop\\indir.png");
+        WaitUtils.waitFor(2);
+        JSUtils.JSclickWithTimeout(allovercommerce.fileUploadSelect);
+        WaitUtils.waitFor(2);
+        JSUtils.JSclickWithTimeout(allovercommerce.galleryImageToClick);
+        WaitUtils.waitFor(2);
+        JSUtils.JSclickWithTimeout(Driver.getDriver().findElement(By.xpath("//*[@id='__attachments-view-122']/li[1]")));
+        WaitUtils.waitFor(3);
+        JSUtils.JSclickWithTimeout(allovercommerce.imageUploadGalery);
         WaitUtils.waitFor(2);
         JSUtils.JSclickWithTimeout(allovercommerce.submitData);
-        WaitUtils.waitFor(1);
-        Assert.assertTrue(allovercommerce.errorMessage.getText().contains("Featured img: This field is required"));
+        WaitUtils.waitFor(2);
+        Assert.assertTrue(allovercommerce.submitAssertion.getText().contains("Published"));
+
+
 
     }
+
 }

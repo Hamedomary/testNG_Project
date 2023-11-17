@@ -1,6 +1,6 @@
 package myapp.tests.US_20_FirstPart;
 
-import myapp.pages.us11_us20.US20Page;
+import myapp.pages.US11_US20.US20Page;
 import myapp.utilities.Driver;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;

@@ -28,26 +28,29 @@ public class US18_TC01 {
 //     User clicks on Store Manager
           vendorAccountPage.storeManagerLink.click();
 //     User clicks on coupons
-          WaitUtils.waitFor(2);
-          vendorAccountPage.couponsLink.click();
+          WaitUtils.waitFor(3);
+          JSUtils.JSclickWithTimeout(vendorAccountPage.couponsLink);
+         // vendorAccountPage.couponsLink.click();
 //     User click on add new button
           WaitUtils.waitFor(3);
-          vendorAccountPage.addNewCouponButton.click();}
+          vendorAccountPage.addNewCouponButton.click();
+          WaitUtils.waitFor(3);
+      }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     @Test (dependsOnMethods = "TC01")
     public void TC02() throws AWTException, InterruptedException {
 
 //          User provides a code in the (code) field
-            vendorAccountPage.codeField.sendKeys("1100");
+            vendorAccountPage.codeField.sendKeys("1200");
 
 //          provide a description in (Description) field
             vendorAccountPage.descriptionField.sendKeys("nice test");
-            WaitUtils.waitFor(2);
+            WaitUtils.waitFor(3);
 
 //          Select (Discount types) separately
             BrowserUtils.dropdownSelectByIndex(vendorAccountPage.discountTypeDropDown,1);
-            WaitUtils.waitFor(2);
+            WaitUtils.waitFor(4);
             BrowserUtils.dropdownSelectByIndex(vendorAccountPage.discountTypeDropDown,0);
 
 //          Provide an amount in (Coupon Amount) field
@@ -74,6 +77,7 @@ public class US18_TC01 {
             Assert.assertTrue(vendorAccountPage.showOnStoreCheckBox.isSelected());
 
 //          Click on (Submit) button
+            WaitUtils.waitFor(3);
             JSUtils.JSscrollIntoView(vendorAccountPage.submitButtonCoupon);
             JSUtils.JSclickWithTimeout(vendorAccountPage.submitButtonCoupon);
 
@@ -85,15 +89,17 @@ public class US18_TC01 {
             JSUtils.JSclickWithTimeout(vendorAccountPage.couponsLink);
 
 //          Verify coupon is created
-            vendorAccountPage.searchBar.sendKeys("1100");
+            vendorAccountPage.searchBar.sendKeys("1200");
             WaitUtils.waitFor(2);
 
-            Assert.assertTrue(vendorAccountPage.couponCreatedCode.getText().equals("1100"));
+            JSUtils.JSscrollIntoView(vendorAccountPage.couponCreatedCode);
             JSUtils.flashElement(vendorAccountPage.couponCreatedCode);
-            WaitUtils.waitFor(2);
+            Assert.assertTrue(vendorAccountPage.couponCreatedCode.getText().equals("1200"));
+            WaitUtils.waitFor(4);
 
             // User deletes the coupon back
-            vendorAccountPage.deleteCouponButton.click();
+            JSUtils.JSclickWithTimeout(vendorAccountPage.deleteCouponButton);
+           // vendorAccountPage.deleteCouponButton.click();
             WaitUtils.waitFor(2);
             Driver.getDriver().switchTo().alert().accept();
 
@@ -105,32 +111,39 @@ public class US18_TC01 {
 
 
         @Test (dependsOnMethods = "TC01")
-        public void TC03(){
+        public void TC03() throws InterruptedException {
               vendorAccountPage.amountField.sendKeys("001");
 //           User clicks on (Coupon expiry date) field
                  JSUtils.JSscrollIntoView(vendorAccountPage.couponExpiryDate);
                  JSUtils.JSclickWithTimeout(vendorAccountPage.couponExpiryDate);
+                 WaitUtils.waitFor(3);
                  vendorAccountPage.couponExpiryDate.click();
                  WaitUtils.waitFor(6);
 
 //           User clicks on( month )option to select a month
+
                  BrowserUtils.dropdownSelectByIndex(vendorAccountPage.monthDropDown,2);
                  WaitUtils.waitFor(3);
 
 //           User clicks on (year) option to select a year
-                 BrowserUtils.dropdownSelectByVisibleText(vendorAccountPage.yearDropDown,"2021");
-                 WaitUtils.waitFor(2);
+                 BrowserUtils.dropdownSelectByVisibleText(vendorAccountPage.yearDropDown,"2000");
+                 WaitUtils.waitFor(3);
 
 //          User clicks on right (arrow) link to change the date
+                JSUtils.flashElement(vendorAccountPage.rightArrowDateChanger);
                 vendorAccountPage.rightArrowDateChanger.click();
-                WaitUtils.waitFor(2);
+                WaitUtils.waitFor(3);
 //          User clicks on left (arrow) link to change the date
+                JSUtils.flashElement(vendorAccountPage.leftArrowDateChanger);
                 vendorAccountPage.leftArrowDateChanger.click();
-                WaitUtils.waitFor(2);
+                WaitUtils.waitFor(3);
 
 //          User Selects a day from (Day) table
+               JSUtils.flashElement(vendorAccountPage.daySelection);
                JSUtils.JSclickWithTimeout(vendorAccountPage.daySelection);
-               WaitUtils.waitFor(2);
+               WaitUtils.waitFor(3);
+
+               ReusableMethods.closeDriver();
        }
 
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -205,14 +218,15 @@ public class US18_TC01 {
 //     Verify the account is not created
            WaitUtils.waitFor(5);
            JSUtils.JSscrollIntoView(vendorAccountPage.couponsLink);
-           WaitUtils.waitFor(2);
+           WaitUtils.waitFor(5);
            JSUtils.JSclickWithTimeout(vendorAccountPage.couponsLink);
-           WaitUtils.waitFor(3);
+           WaitUtils.waitFor(5);
            vendorAccountPage.searchBar.sendKeys("1997");
-           WaitUtils.waitFor(3);
+           WaitUtils.waitFor(5);
+           JSUtils.JSscrollIntoView(vendorAccountPage.couponCreatedCode);
            JSUtils.flashElement(vendorAccountPage.couponCreatedCode);
            Assert.assertTrue(vendorAccountPage.couponCreatedCode.isDisplayed());
-           WaitUtils.waitFor(2);
+           WaitUtils.waitFor(5);
 
 //          Close the driver
            ReusableMethods.closeDriver();

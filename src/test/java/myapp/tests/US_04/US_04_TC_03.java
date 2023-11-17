@@ -1,11 +1,12 @@
 package myapp.tests.US_04;
 
 import com.github.javafaker.Faker;
-import myapp.pages.us04_us15.HomePage;
-import myapp.pages.us04_us15.MyAccountPage;
+import myapp.pages.US04_US15.HomePage;
+import myapp.pages.US04_US15.MyAccountPage;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
+import myapp.utilities.WaitUtils;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -84,6 +85,7 @@ public class US_04_TC_03 {
 
 
 //    Then verify error message is displayed
+        WaitUtils.waitFor(3);
         Assert.assertTrue(myAccountPage.successMessage.isDisplayed());
 
         Driver.getDriver().quit();

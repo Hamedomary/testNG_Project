@@ -1,11 +1,8 @@
-package myapp.tests.projectss;
+package myapp.tests.US_14;
 
-import com.sun.jna.StringArray;
-import myapp.pages.Allovercommerce;
+import myapp.pages.US_14.Allovercommerce;
 import myapp.utilities.*;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 //Go to homepage

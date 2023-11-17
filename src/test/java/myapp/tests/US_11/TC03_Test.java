@@ -1,7 +1,7 @@
 package myapp.tests.US_11;
 
 
-import myapp.pages.us11_us20.AlloverLoginPage;
+import myapp.pages.US11_US20.AlloverLoginPage;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
@@ -10,8 +10,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import java.time.Duration;
 
 import static myapp.utilities.JSUtils.flashElement;
 

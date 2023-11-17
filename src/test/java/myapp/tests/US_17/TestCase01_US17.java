@@ -1,18 +1,12 @@
-
+package myapp.tests.US_17;
 
 import com.github.javafaker.Faker;
-import myapp.pages.melik.AC_checkoutpage;
-import myapp.pages.melik.AC_homepage;
-import myapp.pages.melik.AC_loginpage;
+import myapp.pages.US_14.AC_checkoutpage;
+import myapp.pages.US_14.AC_homepage;
+import myapp.pages.US_14.AC_loginpage;
 import myapp.utilities.*;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
-
-import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 

@@ -1,6 +1,6 @@
 package myapp.tests.US_11;
 
-import myapp.pages.us11_us20.AlloverLoginPage;
+import myapp.pages.US11_US20.AlloverLoginPage;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;

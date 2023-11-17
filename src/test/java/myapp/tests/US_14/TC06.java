@@ -1,6 +1,6 @@
-package myapp.tests;
+package myapp.tests.US_14;
 
-import myapp.pages.Allovercommerce;
+import myapp.pages.US_14.Allovercommerce;
 import myapp.utilities.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -13,15 +13,15 @@ import org.testng.annotations.Test;
 //        Click Store Manager
 //        Click Product
 //        Click Add New
-//        Click Add new Product Brand
-//        Type Brand Name
-//        Choose Parent Taxonomy
+//        Click Add new Category
+//        Type Category Name
+//        Choose Parent Category
 //        Click Add
-//        Verify new Brand was added
+//        Verify New Category was added
 
-public class TC07 {
+public class TC06 {
     @Test
-    public void TC07(){
+    public void TC06(){
         Allovercommerce allovercommerce = new Allovercommerce();
         Driver.getDriver().get(ConfigReader.getProperty("allovercommerce"));
         allovercommerce.login.click();
@@ -37,14 +37,16 @@ public class TC07 {
         WaitUtils.waitFor(2);
         allovercommerce.addnew.click();
         WaitUtils.waitFor(1);
-        JSUtils.JSclickWithTimeout(allovercommerce.addNewBrand);
+        JSUtils.JSclickWithTimeout(allovercommerce.addNewCategory);
         WaitUtils.waitFor(1);
-        allovercommerce.brandName.sendKeys("salvadorwashere");
+        allovercommerce.categoryName.sendKeys("salvadorwashere");
         int random = (int)(Math.random() * 20 + 1);
-        BrowserUtils.dropdownSelectByIndex(allovercommerce.parentBrandDropdown,random);
+        BrowserUtils.dropdownSelectByIndex(allovercommerce.parentCategoryDropdown,random);
         WaitUtils.waitFor(1);
-        JSUtils.JSclickWithTimeout(allovercommerce.addNewBrandButton);
+        JSUtils.JSclickWithTimeout(allovercommerce.addNewCategoryButton);
         WaitUtils.waitFor(3);
-        Assert.assertTrue(allovercommerce.addedBrand.getText().contains("salvadorwashere"));
+        Assert.assertTrue(allovercommerce.addedCategory.getText().contains("salvadorwashere"));
+
+
     }
 }

@@ -21,14 +21,15 @@ public class US03_TC01 {
 
 
 //        User clicks on (my account) link
+        WaitUtils.waitFor(3);
         JSUtils.JSscrollIntoView(alloverCommerceHomePage.myAccount);
         JSUtils.JSclickWithTimeout(alloverCommerceHomePage.myAccount);
-        WaitUtils.waitFor(1);
+        WaitUtils.waitFor(3);
 
 
 //       User clicks on (Addresses)
         alloverCommerceMyAccountPage.addresses.click();
-        WaitUtils.waitFor(1);
+        WaitUtils.waitFor(3);
 
 //        User clicks on (add) button
         alloverCommerceMyAccountPage.billingAddressAddButton.click();
@@ -36,7 +37,7 @@ public class US03_TC01 {
 //        Verify (Email address) field comes automatically
         JSUtils.JSscrollIntoView(alloverCommerceMyAccountPage.billingEmail);
         JSUtils.flashElement(alloverCommerceMyAccountPage.billingEmail);
-        WaitUtils.waitFor(1);
+        WaitUtils.waitFor(3);
         Assert.assertTrue(alloverCommerceMyAccountPage.billingEmail.getAttribute("value").equals(ConfigReader.getProperty("US03_Email")));
 
 //        Assert.assertTrue(alloverCommerceMyAccountPage.billingFirstNameField.getAttribute("value").equals(ConfigReader.getProperty("UserFirstName")));

@@ -30,7 +30,9 @@ public class US03_TC03 {
           alloverCommerceMyAccountPage.addresses.click();
 
 //        User clicks on (Edit Billing Address) button
-          alloverCommerceMyAccountPage.EditYourBillingAddressButton.click();
+          WaitUtils.waitFor(3);
+          JSUtils.JSclickWithTimeout(alloverCommerceMyAccountPage.EditYourBillingAddressButton);
+         // alloverCommerceMyAccountPage.EditYourBillingAddressButton.click();
           WaitUtils.waitFor(2);
 
 //        User clears the credentials if they are filled by using reusable method

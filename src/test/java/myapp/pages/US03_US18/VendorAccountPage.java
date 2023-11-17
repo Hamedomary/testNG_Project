@@ -20,7 +20,8 @@ public class VendorAccountPage {
     @FindBy (xpath = "//select[@id='discount_type']") public WebElement discountTypeDropDown;
     @FindBy (xpath = "//select[@aria-label='Select year']") public WebElement yearDropDown;
     @FindBy (xpath = "//select[@aria-label='Select month']") public WebElement monthDropDown;
-    @FindBy (xpath = "/html[1]/body[1]/div[6]/table[1]/tbody[1]/tr[2]/td[4]/a[1]") public WebElement daySelection;
+    @FindBy (xpath = "/html[1]/body[1]/div[6]/table[1]/tbody[1]/tr[2]/td[3]/a[1]") public WebElement daySelection;
+
     @FindBy (xpath = "/html[1]/body[1]/div[6]/div[1]/a[2]/span[1]") public WebElement rightArrowDateChanger;
     @FindBy (xpath = "//span[@class='ui-icon ui-icon-circle-triangle-w']") public WebElement leftArrowDateChanger;
     @FindBy (xpath = "/html[1]/body[1]/div[1]/main[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[1]/input[5]") public WebElement allowFreeShippingCheckbox;

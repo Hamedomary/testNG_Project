@@ -1,4 +1,4 @@
-package myapp.pages.userStory01;
+package myapp.pages.US_01;
 
 import myapp.utilities.Driver;
 import org.openqa.selenium.WebElement;

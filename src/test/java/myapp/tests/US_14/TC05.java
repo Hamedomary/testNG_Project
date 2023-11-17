@@ -1,6 +1,6 @@
-package myapp.tests;
+package myapp.tests.US_14;
 
-import myapp.pages.Allovercommerce;
+import myapp.pages.US_14.Allovercommerce;
 import myapp.utilities.ConfigReader;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
