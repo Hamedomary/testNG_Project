@@ -1,5 +1,5 @@
 package myapp.tests.US_11;
-import org.junit.Assert;
+
 
 import myapp.pages.us11_us20.AlloverLoginPage;
 import myapp.utilities.Driver;
@@ -8,6 +8,7 @@ import myapp.utilities.WaitUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.time.Duration;
