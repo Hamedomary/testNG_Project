@@ -10,6 +10,6 @@ public class Class {
     }
     @Test
     public void test2(){
-
+       Driver.getDriver().get("www.google.com");
     }
 }
