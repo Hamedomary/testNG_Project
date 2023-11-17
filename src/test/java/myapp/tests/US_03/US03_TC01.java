@@ -17,6 +17,8 @@ public class US03_TC01 {
 //        User logs into the created buyer account
         ReusableMethods.logInMethod();
 
+        //deneme
+
 
 //        User clicks on (my account) link
         JSUtils.JSscrollIntoView(alloverCommerceHomePage.myAccount);
