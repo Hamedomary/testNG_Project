@@ -84,9 +84,8 @@ public class US_04_TC_03 {
 
 
 //    Then verify error message is displayed
-        Assert.assertTrue(myAccountPage.successMessage.isDisplayed());
+        Assert.assertTrue(myAccountPage.errorMessage.isDisplayed());
 
         Driver.getDriver().quit();
-
     }
 }

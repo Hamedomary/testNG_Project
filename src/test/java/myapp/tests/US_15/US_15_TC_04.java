@@ -61,6 +61,11 @@ public class US_15_TC_04 {
 //    When click Add New button
         myAccountPage.addNewButton.click();
         WaitUtils.waitFor(3);
+
+//    And enter product title
+        myAccountPage.productTitle.sendKeys("Flowers");
+
+
         JSUtils.JSclickWithTimeout(myAccountPage.imageToClick);
 //        myAccountPage.imageToClick.click();
 
@@ -124,9 +129,14 @@ public class US_15_TC_04 {
         //    And select color and size
 
         myAccountPage.color.click();
-        myAccountPage.colorSelect.sendKeys("Beyaz");
+        Select selectColor = new Select(myAccountPage.colorSelect);
+        selectColor.selectByVisibleText("Black");
+//        myAccountPage.colorSelect.sendKeys("Beyaz");
+
         myAccountPage.size.click();
-        myAccountPage.sizeSelect.sendKeys("12");
+        Select selectSize = new Select(myAccountPage.sizeSelect);
+        selectSize.selectByVisibleText("12");
+//        myAccountPage.sizeSelect.sendKeys("12");
         
         //    Then click submit button
         JSUtils.JSclickWithTimeout(myAccountPage.submitButton);
