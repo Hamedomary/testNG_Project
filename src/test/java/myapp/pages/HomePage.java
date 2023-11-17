@@ -17,4 +17,8 @@ public class HomePage {
     @FindBy(xpath = "//a[.='Signup as a vendor?']")
     public WebElement signupAsVendorLink;
 
+    @FindBy(xpath = "//*[@id=\"menu-item-1079\"]/a")
+    // //*[@id="menu-item-1079"]/a
+    public WebElement myAccountLink;
+
 }

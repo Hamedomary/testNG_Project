@@ -11,7 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class TestCase01 {
+public class TestCase04 {
 
     WebDriver driver = null;
     HomePage homePage = new HomePage();
@@ -84,16 +84,17 @@ public class TestCase01 {
     }
 
     @Test(priority = 8)
-    public void step8_enterPassLessThanMinRequired() {
+    public void step8_enterPassCompoundLowerCase() {
 
-        // User provides a password less than the minimum required
-        vendorRegisterPage.passwordInput.sendKeys("12");
+        // User provides a password compound of lowercase letters and numbers
+        vendorRegisterPage.passwordInput.sendKeys("spring12345");
     }
 
     @Test(priority = 9)
-    public void step9_verifyTooShortWarningIsVisible() {
+    public void step9_verifyGoodWarningIsVisible() {
 
         // Verify (Too short) text is visible under password field
-        Assert.assertTrue( vendorRegisterPage.tooShortWarning.isDisplayed() );
+        Assert.assertTrue( vendorRegisterPage.goodWarning.isDisplayed() );
     }
+
 }

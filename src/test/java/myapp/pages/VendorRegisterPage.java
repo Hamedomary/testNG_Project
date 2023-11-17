@@ -23,7 +23,16 @@ public class VendorRegisterPage {
     @FindBy(id = "passoword")
     public WebElement passwordInput;
 
+    @FindBy(xpath = "//div[@id=\"password_strength\" and @class=\"short\"]")
+    public WebElement tooShortWarning;
+
     @FindBy(xpath = "//div[@id=\"password_strength\" and @class=\"weak\"]")
     public WebElement weakWarning;
+
+    @FindBy(xpath = "//div[@id=\"password_strength\" and @class=\"good\"]")
+    public WebElement goodWarning;
+
+    @FindBy(xpath = "//div[@id=\"password_strength\" and @class=\"strong\"]")
+    public WebElement strongWarning;
 
 }
