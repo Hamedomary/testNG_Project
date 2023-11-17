@@ -18,6 +18,8 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
+
+
     /*
     scroll all the way up
      */
