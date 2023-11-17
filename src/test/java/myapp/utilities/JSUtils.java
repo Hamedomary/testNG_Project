@@ -18,6 +18,8 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
+
+
     /*
     scroll all the way up
      */
@@ -31,7 +33,7 @@ public class JSUtils {
      */
     //    EXPLICITLY WAIT FOR ELEMENT TO BE VISIBLE, SCROLL INTO THE ELEMENT, THEN CLICK BY JS
     public static void JSclickWithTimeout(WebElement element) {
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", WaitUtils.waitForVisibility(element,5));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", WaitUtils.waitForVisibility(element,10));
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
     /*
