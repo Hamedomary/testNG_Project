@@ -1,4 +1,4 @@
-package myapp.pages;
+package myapp.pages.us04_us18;
 
 import myapp.utilities.Driver;
 import org.openqa.selenium.By;
