@@ -3,8 +3,9 @@ package myapp.tests.us_08;
 import myapp.pages.US_08.Locators;
 import myapp.utilities.Driver;
 import myapp.utilities.WaitUtils;
-import org.junit.Test;
+
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class TC_03 {
 
