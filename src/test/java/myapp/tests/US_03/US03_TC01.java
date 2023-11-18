@@ -18,6 +18,7 @@ public class US03_TC01 {
         ReusableMethods.logInMethod();
 
         //deneme
+        //deneme2
 
 
 //        User clicks on (my account) link
