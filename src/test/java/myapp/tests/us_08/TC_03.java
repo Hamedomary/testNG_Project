@@ -1,6 +1,5 @@
 package myapp.tests.us_08;
 
-import myapp.pages.US_08.Locators;
 import myapp.utilities.Driver;
 import myapp.utilities.WaitUtils;
 import org.junit.Test;
@@ -27,10 +26,6 @@ public class TC_03 {
 
         Driver.getDriver().quit();
 
-
     }
-
-
-
 
 }
