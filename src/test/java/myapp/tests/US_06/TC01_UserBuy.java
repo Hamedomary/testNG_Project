@@ -1,9 +1,9 @@
 package myapp.tests.US_06;
 
 import com.github.javafaker.Faker;
-import myapp.pages.Billing_Page;
-import myapp.pages.Buying_Page;
-import myapp.pages.HomePage;
+import myapp.pages.US_06.Billing_Page;
+import myapp.pages.US_06.Buying_Page;
+import myapp.pages.US_06.HomePage;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.MediaUtils;
