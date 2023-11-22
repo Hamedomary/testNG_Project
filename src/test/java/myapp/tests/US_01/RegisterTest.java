@@ -31,7 +31,7 @@ public class RegisterTest {
         driver.close();
     }
 
-    @Test(priority = 100)
+    @Test
     public void shouldRegisterSuccessFull() {
         driver.get(ALLOVERCOMMERCE_COM);
         loginPage.registerButton.click();

@@ -6,12 +6,17 @@ import myapp.pages.US03_US18.VendorAccountPage;
 import myapp.utilities.*;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
 import java.awt.*;
 
 public class US18_TC01 {
 
+    @AfterTest
+            public void setUp(){
+        Driver.closeDriver();
+    }
     VendorAccountPage vendorAccountPage = new VendorAccountPage();
     AlloverCommerceMyAccountPage alloverCommerceMyAccountPage = new AlloverCommerceMyAccountPage();
     AlloverCommerce_HomePage alloverCommerceHomePage = new AlloverCommerce_HomePage();
@@ -26,7 +31,9 @@ public class US18_TC01 {
           WaitUtils.waitFor(2);
           vendorAccountPage.myAccountVendor.click();
 //     User clicks on Store Manager
-          vendorAccountPage.storeManagerLink.click();
+          WaitUtils.waitFor(3);
+          JSUtils.JSclickWithTimeout(vendorAccountPage.storeManagerLink);
+         // vendorAccountPage.storeManagerLink.click();
 //     User clicks on coupons
           WaitUtils.waitFor(3);
           JSUtils.JSclickWithTimeout(vendorAccountPage.couponsLink);
@@ -105,7 +112,7 @@ public class US18_TC01 {
 
 //           User closes the driver
              WaitUtils.waitFor(1);
-             Driver.closeDriver();
+
     }
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -143,7 +150,7 @@ public class US18_TC01 {
                JSUtils.JSclickWithTimeout(vendorAccountPage.daySelection);
                WaitUtils.waitFor(3);
 
-               ReusableMethods.closeDriver();
+
        }
 
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -162,7 +169,7 @@ public class US18_TC01 {
            Assert.assertTrue(vendorAccountPage.couponTitleISNeededErrorMessage1.isDisplayed());
            WaitUtils.waitFor(3);
 
-           ReusableMethods.closeDriver();
+
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -190,7 +197,7 @@ public class US18_TC01 {
           Assert.assertTrue(vendorAccountPage.couponTitleISNeededErrorMessage1.isDisplayed());
 
 //        Close the driver
-           ReusableMethods.closeDriver();
+
       }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -229,6 +236,6 @@ public class US18_TC01 {
            WaitUtils.waitFor(5);
 
 //          Close the driver
-           ReusableMethods.closeDriver();
+
        }
 }
