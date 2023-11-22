@@ -43,6 +43,10 @@ public class TC_06 {
         WaitUtils.waitFor(5);
         Assert.assertTrue(locators.orderComplete.getText().contains("Your order has been received"));
 
+
+        Driver.closeDriver();
+
+
         Driver.closeDriver();
 
     }

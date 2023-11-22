@@ -80,10 +80,18 @@ public class Locators {
     @FindBy(xpath = "//*[text()='Thank you. Your order has been received.']")
     public WebElement orderComplete;
 
-
-
-
-
+    @FindBy(xpath = "//*[text()='View cart']")
+    public WebElement viewCart;
+    @FindBy(xpath = "//div/input[@name='coupon_code']")
+    public WebElement couponCode;
+    @FindBy(xpath = "//div/button[@name='apply_coupon']")
+    public WebElement applyCoupon;
+    @FindBy(xpath = "//*[text()='My Orders']")
+    public WebElement myOrders;
+    @FindBy(xpath = "//tbody/tr")
+    public List<WebElement> orderList;
+    @FindBy(xpath = "//*[text()='View']")
+    public List<WebElement> orderListView;
 
 
 

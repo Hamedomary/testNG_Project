@@ -90,6 +90,6 @@ public class JSUtils {
 
     public static void JSscrollAllHorizVertical(){
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-        js.executeScript("window.scrollBy(0,200)");
+        js.executeScript("window.scrollBy(0,250)");
     }
 }
