@@ -18,6 +18,8 @@ public class JSUtils {
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("window.scrollTo(0,document.body.scrollHeight)");
     }
+
+
     /*
     scroll all the way up
      */
@@ -31,7 +33,7 @@ public class JSUtils {
      */
     //    EXPLICITLY WAIT FOR ELEMENT TO BE VISIBLE, SCROLL INTO THE ELEMENT, THEN CLICK BY JS
     public static void JSclickWithTimeout(WebElement element) {
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", WaitUtils.waitForVisibility(element,5));
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", WaitUtils.waitForVisibility(element,10));
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
     }
     /*
@@ -68,7 +70,7 @@ public class JSUtils {
 //        I have to do this, cause getText in this case does not return teh text in an input
 //        EG: getValueByJS("hotelDates")
     }
-    public static void flashElement(WebElement element) throws InterruptedException {
+    public static void flashElement(WebElement element){
         JavascriptExecutor jsExecutor = (JavascriptExecutor)Driver.getDriver();
         for (int i=0; i<10; i++){
             jsExecutor.executeScript("arguments[0].style.backgroundColor = 'red'", element );
@@ -84,5 +86,10 @@ public class JSUtils {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    public static void JSscrollAllHorizVertical(){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("window.scrollBy(0,200)");
     }
 }
