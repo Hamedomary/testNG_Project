@@ -1,14 +1,4 @@
-<<<<<<< HEAD:src/test/java/myapp/tests/US_14/TC02.java
-<<<<<<< Updated upstream:src/test/java/myapp/tests/TC02.java
-
-package myapp.tests;public class TC02 {
-
-=======
->>>>>>> dd51b4f91c6a8f90f243acb28a2a59093c675782:src/test/java/myapp/tests/TC02.java
-package myapp.tests;
-=======
 package myapp.tests.US_14;
->>>>>>> Stashed changes:src/test/java/myapp/tests/US_14/TC02.java
 
 import myapp.pages.US_14.Allovercommerce;
 import myapp.utilities.ConfigReader;
