@@ -1,6 +1,5 @@
 package myapp.tests.us_08;
 
-import myapp.pages.US_08.Locators;
 import myapp.utilities.Driver;
 import myapp.utilities.JSUtils;
 import myapp.utilities.WaitUtils;
@@ -20,7 +19,7 @@ public class TC_06 {
         locators.catalogItems.get(0).click();
         locators.catalogProduct.get(1).click();
         WaitUtils.waitFor(5);
-        locators.productInWishlistss.click();
+        locators.productInWishlists.click();
         WaitUtils.waitFor(5);
         locators.wishlistButton.click();
         locators.addProductCard.click();
@@ -44,6 +43,11 @@ public class TC_06 {
         WaitUtils.waitFor(5);
         Assert.assertTrue(locators.orderComplete.getText().contains("Your order has been received"));
 
+
         Driver.closeDriver();
+
+
+        Driver.closeDriver();
+
     }
 }

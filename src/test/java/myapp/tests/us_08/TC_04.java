@@ -1,6 +1,5 @@
 package myapp.tests.us_08;
 
-import myapp.pages.US_08.Locators;
 import myapp.utilities.Driver;
 import myapp.utilities.WaitUtils;
 
@@ -21,19 +20,21 @@ public class TC_04 {
         locators.signInButton.click();
         WaitUtils.waitFor(5);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://allovercommerce.com/");
+        locators.catalogItems.get(0).click();
+        locators.catalogProduct.get(1).click();
+        WaitUtils.waitFor(5);
+        locators.productInWishlists.click();
         WaitUtils.waitFor(5);
         locators.wishlistButton.click();
         WaitUtils.waitFor(5);
-        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://allovercommerce.com/wishlist/"));
-        WaitUtils.waitFor(5);
+        Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("/wishlist/"));
         locators.seeQuickView.click();
         Assert.assertNotNull(locators.seeQuickView);
         WaitUtils.waitFor(5);
         Assert.assertNotNull(locators.productdetails);
 
-
         Driver.getDriver().quit();
 
     }
 
-    }
+}

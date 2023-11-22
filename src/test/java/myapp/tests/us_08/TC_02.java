@@ -1,8 +1,10 @@
 package myapp.tests.us_08;
 
-import myapp.pages.US_08.Locators;
 import myapp.utilities.Driver;
 import myapp.utilities.WaitUtils;
+
+
+
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,7 +14,7 @@ public class TC_02 {
     Locators locators = new Locators();
 
     @Test
-    public void testCase2(){
+    public void testCase2() {
         Driver.getDriver().get("https://allovercommerce.com/");
         WaitUtils.waitFor(5);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://allovercommerce.com/");
@@ -22,12 +24,12 @@ public class TC_02 {
         locators.signInButton.click();
         WaitUtils.waitFor(5);
         Assert.assertEquals(Driver.getDriver().getCurrentUrl(), "https://allovercommerce.com/");
-        WaitUtils.waitFor(5);
         locators.catalogItems.get(0).click();
         locators.catalogProduct.get(1).click();
         WaitUtils.waitFor(5);
         Assert.assertTrue(Driver.getDriver().getCurrentUrl().contains("https://allovercommerce.com/urun/"));
-        locators.addCatalogProductToWishList.click();
+        locators.productInWishlists.click();
+        WaitUtils.waitFor(5);
         locators.wishlistButton.click();
         WaitUtils.waitFor(5);
         Assert.assertNotNull(locators.productInWishlist);
