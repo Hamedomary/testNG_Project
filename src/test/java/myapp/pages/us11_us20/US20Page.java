@@ -1,4 +1,4 @@
-package myapp.pages.us11_us20;
+package myapp.pages.US11_US20;
 
 import myapp.utilities.Driver;
 import org.openqa.selenium.WebElement;
